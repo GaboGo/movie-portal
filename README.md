@@ -5,5 +5,5 @@ Movie portal is a web portal to search, discover and analize all the movies, you
 # Requeriments
 
 * Developed in AngularJS and uising the movieorg API
-* Desing is not responsive
+* Desig is not responsive
 * Not usig any preprocessor.
