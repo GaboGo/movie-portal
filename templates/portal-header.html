@@ -1,0 +1,19 @@
+<header class="header">
+
+    <a class="logo" href="#">Logo</a>
+    <h3 class="discover">Descubre</h3>
+
+    <input ng-model="keyword" ng-change="search()" type="text" name="search" placeholder="Buscar"/>
+
+    <aside class="search-results">
+      <span ng-if="!searchResponse">{{message}}</span>
+      <ul ng-if="searchResponse">
+        <li ng-repeat="result in search.items | limitTo:3" ng-click="goToDetails(result.id)">
+          <img class="search-thumbnail" src="{{!result.poster_path ? 'img/noimage.png' : 'http://image.tmdb.org/t/p/w92'+result.poster_path}}" class="list-icon"/>
+          <span class="search-title">{{result.title}}</span>
+          <span class="search-date">{{getYear(result.release_date)}}</span>
+        </li>
+      </ul>
+    </aside>
+
+</header>

@@ -1,0 +1,83 @@
+<portal-header></portal-header>
+<section>
+    <div class="item-details">
+
+       <div class="item-info">
+
+           <div class="item-detail">
+               <div class="poster-detail">
+                   <img src="{{!movie.poster_path ? 'img/noimage.png' : 'http://image.tmdb.org/t/p/w500'+movie.poster_path}}" class="list-icon-detail"/>
+               </div>
+               <p class="line1-detail">{{movie.title}} ({{getYear(movie.release_date)}})</p>
+               <div class="rating-detail"><span>{{movie.vote_average}}</span><p>User Score</p></div>
+               <p class="overview-detail">{{movie.overview}}</p>
+               <p class="directors">{{getDirectors()}}</p>
+           </div>
+
+           <div class="item-cast">
+               <h1 ng-if="seasons > 0">Datos</h1>
+               <div ng-if="seasons > 0" class="season-numbers">
+                   <span ng-if="seasons > 0" ng-repeat="i in range(seasons)" ng-class="$index + 1 == 1 ? 'season-number-active' : 'season-number'">{{$index + 1}}</span>
+                   <ul class="episodes">
+                       <li ng-init="showEpisodeDetails = false" ng-click="showEpisodeDetails = ! showEpisodeDetails" ng-repeat="episode in episodes" class="episode" ng-class="{ 'more': showEpisodeDetails }">
+                           <span>{{$index + 1}}</span>
+                           <h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h1>
+                           <input type="checkbox" class="check" name="episode{{$index + 1}}" value="{{$index + 1}}">
+                           <div class="rest-info" ng-class="{ 'hidden': ! showEpisodeDetails }">
+                              <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                              <img class="percentage" src="img/percentage.png" width="60" height="22">
+                              <img class="social" src="img/social.png" width="130" height="40">
+                           </div>
+                       </li>
+                   </ul>
+               </div>
+               <p ng-if="seasons == 0">{{description}}</p>
+           </div>
+
+           <div class="intem-info">
+             <h1>Datos</h1>
+             <section>
+               <label for="original-title">Titulo original</label><br/><br/>
+               <span>{{movie.original_title}}</span>
+             </section>
+             <section>
+               <label for="status">Estado</label><br/><br/>
+               <span>{{movie.status}}</span>
+             </section>
+             <section>
+               <label for="len">Lenguaje Original</label><br/><br/>
+               <span>{{movie.original_language | uppercase}}</span>
+             </section>
+             <section>
+               <label for="duration">Duracion</label><br/><br/>
+               <span>{{movie.runtime}} Minutos</span>
+             </section>
+             <section>
+               <label for="budget">Presupuesto</label><br/><br/>
+               <span>{{movie.budget | currency}}</span>
+             </section>
+             <section>
+               <label for="revenue">Ingresos</label><br/><br/>
+               <span>{{movie.revenue | currency}}</span>
+             </section>
+             <section>
+               <label for="web">Web</label><br/><br/>
+               <a href="{{movie.homepage}}">{{movie.homepage}}</a>
+             </section>
+             <section class="genres">
+               <label for="genres">Generos</label><br/><br/>
+               <span ng-repeat="genre in genres">{{genre}} </span>
+             </section>
+             <section class="genres">
+               <label for="keywords">Palabras claves</label><br/><br/>
+               <span ng-repeat="keyword in keywords">{{keyword}} </span>
+             </section>
+             <section class="video">
+               <label for="video">Trailer</label><br/><br/>
+               <iframe width="950" height="460" ng-src="{{video}}"></iframe>
+             </section>
+           </div>
+
+       </div>
+   </div>
+</section>

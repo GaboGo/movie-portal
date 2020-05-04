@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html ng-app="moviePortal">
+    <head>
+        <title>Movie Portal</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <meta name="author" content="Gabriel Goethe">
+        <meta charset="UTF-8">
+
+        <link href="styles/screen.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="styles/screen.css" rel="stylesheet" type="text/css" media="screen and (min-width:786px) and (max-width:1600px)" /> -->
+
+        <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/angular-route.min.js"></script>
+        <script src="scripts/ng-infinite-scroll.min.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/directives.js"></script>
+        <script src="scripts/services.js"></script>
+        <script src="scripts/controllers.js"></script>
+    </head>
+    <body ng-cloak>
+          <ng-view id="container"></ng-view>
+    </body>
+</html>

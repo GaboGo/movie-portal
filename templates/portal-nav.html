@@ -1,0 +1,51 @@
+<nav class="filters">
+   <h1>Descubre Nuevas Películas</h1>
+   <section>
+     <label for="year">Año</label>
+     <select id="year" ng-model="year" ng-change="byFilters()">
+       <option value="0">----</option>
+       <option value="2020">2020</option>
+       <option value="2019">2019</option>
+       <option value="2018">2018</option>
+       <option value="2017">2017</option>
+       <option value="2016">2016</option>
+       <option value="2015">2015</option>
+       <option value="2014">2014</option>
+       <option value="2013">2013</option>
+       <option value="2012">2012</option>
+       <option value="2011">2011</option>
+       <option value="2010">2010</option>
+     </select>
+   </section>
+   <section>
+     <label for="order">Ordenar por</label>
+     <select id="popularity" ng-model="popularity" ng-change="byFilters()">
+       <!-- <option value=""></option> -->
+       <option value="popularity.desc">Popularidad Descendente...</option>
+       <option value="popularity.asc">Popularidad Ascedente...</option>
+       <option value="vote_average.desc">Rating Descendente...</option>
+       <option value="vote_average.asc">Rating Ascedente...</option>
+     </select>
+   </section>
+   <section>
+     <label for="genre">Géneros</label>
+     <select  id="genre" ng-model="genre" ng-change="byFilters()">
+       <option value="">Filtrar por género...</option>
+       <option value="28">Accion</option>
+       <option value="35">Comedia</option>
+       <option value="18">Drama</option>
+       <option value="53">Thriller</option>
+       <option value="878">Sci-Fi</option>
+       <option value="10749">Romance</option>
+     </select>
+   </section>
+   <section>
+     <label for="keywords">Palabra Clave</label>
+     <select id="keywords" ng-model="keywords" ng-change="byFilters()">
+       <option value="">Filtrar por palabra clave...</option>
+       <option value="9673">Love</option>
+       <option value="33885">Carros</option>
+       <option value="9882">Espacio</option>
+     </select>
+   </section>
+</nav>

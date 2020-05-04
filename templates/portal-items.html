@@ -1,0 +1,27 @@
+<ul>
+  <li ng-if="response" ng-repeat="item in portal.items">
+
+      <article>
+          <div ng-mouseover="getInfo(item.imdbID)" class="item">
+              <section href="#/movie/{{item.id}}" class="right">
+                <div class="poster" ng-click="goToDetails(item.id)">
+                    <img src="{{!item.poster_path ? 'img/noimage.png' : 'http://image.tmdb.org/t/p/w500'+item.poster_path}}" class="list-icon"/>
+                </div>
+              </section>
+              <section class="left">
+                <header>
+                  <p class="title" ng-click="goToDetails(item.id)">{{item.title}}</p>
+                  <div class="rating"><span>{{item.vote_average}}</span></div>
+                </header>
+                <section>
+                  <span class="release-date">{{getYear(item.release_date)}}</span>
+                  <p class="overview">{{item.overview}}</p>
+                </section>
+                <footer class="more-info" ng-click="goToDetails(item.id)">
+                    <a>Mas informacion</a>
+                </footer>
+              </section>
+         </div>
+      </article>
+  </li>
+</ul>
